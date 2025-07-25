@@ -13,7 +13,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware, # type: ignore
-    allow_origins=["http://localhost:3000", "https://shopify-data.netlify.app/"],
+    allow_origins=["http://localhost:3000", "https://shopify-data.netlify.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
