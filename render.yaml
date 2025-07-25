@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: marketing-data-api
+    env: python
+    region: oregon
+    plan: free
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
+    autoDeploy: false
+    envVars:
+      - key: ENV
+        value: production
+    disk:
+      name: duckdb-storage
+      mountPath: /app/app
+      sizeGB: 2
